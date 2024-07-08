@@ -12,14 +12,14 @@ Users should be able to:
 
 ### Screenshot
 
-![Desktop](dataStorage/images/desktop.png)
-![Tablet](dataStorage/images/tablet.png)
-![Mobile](dataStorage/images/mobile.png)
+![Desktop](images/desktop.png)
+![Tablet](images/tablet.png)
+![Mobile](images/mobile.png)
 
 
 ### Links
 
-- Live Site URL: [Click Here](https://your-live-site-url.com)
+- Live Site URL: [Click Here](https://talktodeego.github.io/fem-datastorage/)
 
 
 ### Built with
