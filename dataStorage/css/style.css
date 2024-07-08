@@ -1,0 +1,315 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: "Raleway", sans-serif;
+}
+
+:root{
+    --color-gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+    --color-paleblue: hsl(243, 100%, 93%);
+    --color-grayishblue: hsl(229, 7%, 55%);
+    --color-darkblue: hsl(228, 56%, 26%);
+    --color-verydarkblue: hsl(229, 57%, 11%);
+    --font-primary: "Raleway", sans-serif;
+}
+
+.container{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--color-verydarkblue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.backgroundImg{
+    position: absolute;
+    right: 0;
+    bottom: 0; 
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+}
+
+.backgroundImg .desktop{
+    width: 100%;
+    height: 50vh;
+    object-fit: fill;
+}
+
+.backgroundImg .mobile{
+    display: none;
+}
+
+.gridContainer{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr 2fr);
+    gap: 2rem;
+    align-items: end;
+    z-index: 1;
+    grid-template-areas:
+    "leftbox rightbox rightbox";
+}
+
+.leftBox,
+.rightBox{
+    background-color: var(--color-darkblue);
+    height: 200px;
+}
+
+.leftBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    grid-area: leftbox;
+    width: 300px;
+    height: 120%;
+    padding: 2rem;
+    border-radius: 10px;
+    border-top-right-radius: 100px;
+}
+
+.logoFile{
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+}
+
+.document,
+.folder,
+.upload{
+    display: grid;
+    border-radius: 10px;
+    background-color: var(--color-verydarkblue);
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+
+.documentImg,
+.folderImg,
+.uploadImg{
+    align-self: center;
+    justify-self: center;
+}
+
+.rightBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 2rem;
+    height: 150px;
+    border-radius: 10px;
+    grid-area: rightbox;
+    color: white;
+    position: relative;
+}
+
+.boxLeft{
+    position: absolute;
+    min-width: 20%;
+    text-align: center;
+    background-color: white;
+    color: var(--color-grayishblue);
+    padding: .60rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    right: 2rem;
+    top: -2.3rem;
+}
+
+.boxLeft p{
+    font-size: .70rem;
+    font-weight: 700;
+}
+
+.speechTri{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 0;
+    
+}
+
+.speechTri::after{ 
+    content: "";
+    position: absolute;
+    right: 0;
+    border-top: 30px solid white;
+    border-left: 30px solid transparent;
+}
+
+.numberGB{
+    font-weight: 700; 
+    font-size: 2rem;
+    color: black;
+}
+
+.headerGB{
+    font-weight: 700;
+}
+
+.progressBar{
+    position: relative;
+    border-radius: 20px;
+    width: 100%;
+    height: 15%;
+    background-color: var(--color-verydarkblue);
+}
+
+.progressBarColor{
+    position: absolute;
+    width: 80%;
+    border-radius: 20px;
+    height: 100%;
+    background: linear-gradient(135deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+}
+
+.size{
+    display: flex;
+    font-weight: 700;
+    justify-content: space-between;
+}
+
+@media (min-width: 425px) and (max-width: 768px){
+    .backgroundImg .desktop{
+        display: none;
+    }
+
+    .backgroundImg{
+        height: 100dvh;
+        width: 100%;
+        object-fit: fill;
+    }
+
+    .backgroundImg .mobile{
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .gridContainer{
+        grid-template-columns: minmax(200px, 400px);
+        grid-template-areas:
+        "leftbox leftbox leftbox"
+        "rightbox rightbox rightbox";
+    }
+
+    .leftBox{
+        width: auto;
+    }
+
+    .logoFile{
+        width: 40%;
+        height: auto;
+        padding: 1rem 0;
+    }
+
+    .boxLeft{
+        position: absolute;
+        width: 40%;
+        text-align: center;
+        background-color: white;
+        color: var(--color-grayishblue);
+        padding: 1rem;
+        border-radius: 10px;
+        right: 10rem;
+        top: 80%;
+    }
+
+    .numberGB{
+        font-size: 3rem;
+    }
+
+    .boxLeft p{
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    .speechTri{
+        display: none;
+    }
+
+    .header{
+        text-align: center;
+    }
+
+    .header p{
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 280px) and (max-width: 424px){
+    .container{
+        height: 100dvh;
+    }
+
+    .backgroundImg .desktop{
+        display: none;
+    }
+
+    .backgroundImg{
+        height: 100dvh;
+        width: 100%;
+        object-fit: fill;
+    }
+
+    .backgroundImg .mobile{
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .gridContainer{
+        grid-template-columns: minmax(200px, 400px);
+        grid-template-areas:
+        "leftbox leftbox leftbox"
+        "rightbox rightbox rightbox";
+    }
+
+    .leftBox{
+        width: auto;
+    }
+
+    .logoFile{
+        width: 40%;
+        height: auto;
+        padding: 1rem 0;
+    }
+
+    .boxLeft{
+        position: absolute;
+        text-align: center;
+        background-color: white;
+        color: var(--color-grayishblue);
+        padding: 1rem;
+        border-radius: 10px;
+        right: 8rem;
+        top: 80%;
+    }
+
+    .numberGB{
+        font-size: 3rem;
+    }
+
+    .boxLeft p{
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    .speechTri{
+        display: none;
+    }
+
+    .header{
+        text-align: center;
+    }
+
+    .header p{
+        font-size: 1.5rem;
+    }
+}
