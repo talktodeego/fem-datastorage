@@ -13,6 +13,8 @@ Users should be able to:
 ### Screenshot
 
 ![Desktop](dataStorage/images/desktop.png)
+![Tablet](dataStorage/images/tablet.png)
+![Mobile](dataStorage/images/mobile.png)
 
 
 ### Links
